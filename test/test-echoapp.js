@@ -1,7 +1,7 @@
 var fs = require("fs");
 var assert = require("assert");
 var vumigo = require("vumigo_v01");
-var app = require("../lib/go-tps");
+var app = require("../lib/echoapp");
 
 
 describe("sandbox app.api", function() {
@@ -22,16 +22,30 @@ describe("GoEventsStateCreator", function() {
     var tester;
 
     beforeEach(function() {
+        app.api.config_store.config = {
+            "events": [
+                {"name":"JoziHub"},
+                {"name":"Christmas Party"}
+            ]
+        };        
         tester = new vumigo.test_utils.ImTester(app.api, {async: true});
     });
 
-    it("should do something", function (done) {
-        var p = tester.check_state({
-            user: null,
-            content: null,
-            next_state: "thing",
-            response: "^$"
+   
+
+    describe("if user chooses JoziHub", function  () {
+        it("should go to JoziHub firstname state", function (done) {
+            var p = tester.check_state({
+                user: null,
+                content: null,
+                next_state: "jozihub-name",
+                response: "Please enter your firstname"
+            });
+            p.then(done, done);
         });
-        p.then(done, done);
+        
     });
+
+
 });
+
