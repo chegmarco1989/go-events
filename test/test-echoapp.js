@@ -62,6 +62,32 @@ describe("GoEventsStateCreator", function() {
         
     });
 
+    describe("if user completes JoziHub", function  () {
+        it("should put details in group", function (done) {
+            var p = tester.check_state(
+            {
+                user: {
+                    current_state: 'jozihub-surname',
+                    answers: {
+                        'jozihub-name': 'paul',
+                        
+                    }
+                },
+                content: 'scott',
+                next_state: "jozihub-end",
+                response: "Thanks - bye!",
+                continue_session: false
+            });
+
+            p.then(function(){
+                console.log(tester.api.contact_store);
+            });
+
+            p.then(done, done);
+        });
+        
+    });
+
 
 });
 
