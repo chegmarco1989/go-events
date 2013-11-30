@@ -69,7 +69,7 @@ describe("GoEventsStateCreator", function() {
                 user: {
                     current_state: 'jozihub-surname',
                     answers: {
-                        'jozihub-name': 'paul',
+                        'jozihub-name': 'paul'
                         
                     }
                 },
