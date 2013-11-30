@@ -1,0 +1,22 @@
+{
+  "name": "go-events",
+  "version": "0.0.1",
+  "description": "Woot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hodgestar/go-events"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/hodgestar/go-events/issues"
+  },
+  "homepage": "https://github.com/hodgestar/go-events",
+  "dependencies": {
+    "vumigo_v01": "~0.1.21"
+  }
+}
