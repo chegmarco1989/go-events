@@ -1,1 +1,1 @@
-require("./test-go-tps.js");
+require("./test-echoapp.js");
